@@ -14,6 +14,10 @@ contract Recette {
 
     mapping(address => infosRecette) Recettes;
 
+    function getRecette(address _address) public view returns(infosRecette memory) {
+        return Recettes[_address];
+    }
+
     function getDifficulty(address _address) public view returns(Difficulty){
         return Recettes[_address].difficulty;
     }
